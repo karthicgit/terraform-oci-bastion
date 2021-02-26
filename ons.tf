@@ -2,13 +2,14 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
 provider "oci" {
-  alias            = "home"
-  fingerprint      = var.api_fingerprint
-  private_key_path = var.api_private_key_path
+  alias                = "home"
+  fingerprint          = var.api_fingerprint
+  private_key_path     = var.api_private_key_path
+  private_key.         = var.api_private_key
   private_key_password = var.passphrase
-  region           = lookup(data.oci_identity_regions.home_region.regions[0], "name")
-  tenancy_ocid     = var.tenancy_id
-  user_ocid        = var.user_id
+  region               = lookup(data.oci_identity_regions.home_region.regions[0], "name")
+  tenancy_ocid         = var.tenancy_id
+  user_ocid            = var.user_id
 }
 
 resource "oci_ons_notification_topic" "bastion_notification" {
