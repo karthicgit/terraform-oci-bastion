@@ -14,6 +14,8 @@ variable "api_private_key_path" {
   default     = ""
 }
 
+variable "passphrase" {}
+
 variable "region" {
   # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
   description = "the oci region where resources will be created"
